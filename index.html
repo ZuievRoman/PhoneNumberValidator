@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="ru" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PhoneNumberValidator</title>
+    <link rel="stylesheet" href="css/main.css">
+
+
+</head>
+<body>
+
+<div id="app" class="container">
+    <div class="row">
+
+        <form class="form-inline" role="form">
+            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                <select class="form-control" v-model="code_country" v-on:change="phoneResult" required>
+                    <option v-for="country in countries" data-thumbnail="{{ country.icon }}" value="{{ country.code }}">
+                        {{ country.code }}
+                    </option>
+                </select>
+                <label class="sr-only" for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" placeholder="enter your phone" v-model="number"
+                       v-on:keydown="validatePhone" value="{{number}}" required>
+            </div>
+            <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                <pre class="form-control" rows="1" readonly disabled>{{result}}</pre>
+                <button v-on:click="phoneResult" type="button" class="btn btn-default text-right">
+                    <span class="glyphicon glyphicon-send"></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<footer>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</footer>
+</body>
+</html>

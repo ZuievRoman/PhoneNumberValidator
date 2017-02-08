@@ -1,0 +1,25 @@
+body {
+  background-color: #3949ab;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  color: #272727;
+  #app{
+    form{
+      width: 355px;
+      margin: 100px auto 0;
+      background-color: #fff;
+      padding: 6px 0;
+      border-radius: 2px;
+      min-height: 120px;
+      .form-group{
+        padding: 9px 15px;
+      }
+      pre{
+        width: 279px;
+        margin: 0;
+      }
+    }
+
+  }
+
+}
